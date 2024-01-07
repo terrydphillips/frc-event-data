@@ -14,7 +14,8 @@ namespace Spyder_Rest_Client
 
     class Program
     {
-        private static readonly HttpClient client = new HttpClient();
+        private static readonly HttpClient 
+        client = new HttpClient();
         private static String responseString;
 
         private static TeamNicknameMap nicknameMap = new TeamNicknameMap();
@@ -98,11 +99,11 @@ namespace Spyder_Rest_Client
             }*/
 
             // Create the Public folder to dump the CSV
-            Directory.CreateDirectory("c:\\Users\\Public\\FRCEvents");
+            Directory.CreateDirectory("scouting_event");
 
             // Generate the CSV header
             using (System.IO.StreamWriter file = 
-                new System.IO.StreamWriter(@"C:\Users\Public\FRCEvents\Event.csv"))
+                new System.IO.StreamWriter(@"scouting_event/Event.csv"))
             {
                 file.Write("Team, "
                     + "Nickname, " 
@@ -119,7 +120,7 @@ namespace Spyder_Rest_Client
 
             // Generate the CSV row data
             using (System.IO.StreamWriter file = 
-                new System.IO.StreamWriter(@"C:\Users\Public\FRCEvents\Event.csv", true))
+                new System.IO.StreamWriter(@"scouting_event/Event.csv", true))
             {
                 foreach (Ranking element in rankingsData.rankings) 
                 {
